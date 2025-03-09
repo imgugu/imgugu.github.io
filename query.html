@@ -95,6 +95,33 @@
             color: #1989fa;
         }
         
+        /* 新增：用于两列布局的样式 */
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .column {
+            flex: 0 0 50%;
+            display: flex;
+            padding-right: 10px;
+        }
+        
+        .column .item-label {
+            flex: 0 0 50%;
+        }
+        
+        .column .item-value {
+            flex: 0 0 50%;
+        }
+        
+        .full-width {
+            flex: 0 0 100%;
+        }
+        
         /* Lists 区域 */
         .lists .item:nth-child(odd) {
             background-color: #f9f9f9;
@@ -115,15 +142,19 @@
         <!-- Users 区域 -->
         <div class="section users">
             <h2 class="section-title">项目负责人信息</h2>
-            <div class="item">
-                <div class="item-label">主要负责人</div>
-                <div class="item-value">张三</div>
+            <!-- 两列布局，前两个键值对在同一行 -->
+            <div class="two-columns">
+                <div class="column">
+                    <div class="item-label">主要负责人</div>
+                    <div class="item-value">张三</div>
+                </div>
+                <div class="column">
+                    <div class="item-label">项目负责人</div>
+                    <div class="item-value">李四</div>
+                </div>
             </div>
-            <div class="item">
-                <div class="item-label">项目负责人</div>
-                <div class="item-value">李四</div>
-            </div>
-            <div class="item">
+            <!-- 第三个键值对占一整行 -->
+            <div class="item full-width">
                 <div class="item-label">专职安全生产管理人员</div>
                 <div class="item-value">王五</div>
             </div>
